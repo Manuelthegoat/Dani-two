@@ -48,7 +48,7 @@ const Hero = () => {
       pauseOnBlur: true,
       motion: { reduce: { value: true, factor: 4 } }, // auto-reduce on low FPS
       particles: {
-        number: { value: 45, density: { enable: true, area: 900 } }, // a bit lighter
+        number: { value: 80, density: { enable: true, area: 900 } }, // a bit lighter
         color: { value: "#ffffff" },
         shape: { type: "circle" },
         opacity: {
