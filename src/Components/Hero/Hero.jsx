@@ -81,6 +81,7 @@ const Hero = () => {
 
   return (
     <section className="hero">
+      <div className="bloom" aria-hidden="true" />
       <Particles
         id="tsparticles"
         init={particlesInit}

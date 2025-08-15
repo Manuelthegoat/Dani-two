@@ -1,6 +1,7 @@
+// Header.jsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import './Header.css';
 import Img from '../../Assets/logo.png';
@@ -8,43 +9,39 @@ import Img from '../../Assets/logo.png';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen((v) => !v);
+
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    // fire the event
+    window.dispatchEvent(new CustomEvent('open-cta'));
+    // close the menu if open
+    setIsMenuOpen(false);
   };
 
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Works', href: '/illustrations' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Book Now', href: '#contact' },
+    // href can be "#" since we’re intercepting click
+    { name: 'Book Now', href: '#' },
   ];
 
   return (
     <header className="header-container">
       <div className="header-content">
-        {/* Logo on the left */}
         <div className="logo-container">
-          <img 
-            src={Img}
-            alt="Artist Logo" 
-            className="logo"
-          />
+          <img src={Img} alt="Artist Logo" className="logo" />
         </div>
 
-        {/* Hamburger/Close menu button on the right */}
-        <button 
+        <button
           className="menu-toggle"
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
-          {isMenuOpen ? (
-            <FaTimes className="menu-icon" />
-          ) : (
-            <HiMiniBars3BottomRight className="menu-icon" />
-          )}
+          {isMenuOpen ? <FaTimes className="menu-icon" /> : <HiMiniBars3BottomRight className="menu-icon" />}
         </button>
 
-        {/* Fullscreen menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
@@ -54,11 +51,7 @@ const Header = () => {
               exit={{ opacity: 0, y: -50 }}
               transition={{ duration: 0.3 }}
             >
-              <motion.nav
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.3 }}
-              >
+              <motion.nav initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.3 }}>
                 <ul className="nav-links">
                   {navLinks.map((link, index) => (
                     <motion.li
@@ -67,9 +60,15 @@ const Header = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.3 + index * 0.1 }}
                     >
-                      <a 
-                        href={link.href} 
-                        onClick={() => setIsMenuOpen(false)}
+                      <a
+                        href={link.href}
+                        onClick={(e) => {
+                          if (link.name === 'Book Now') {
+                            handleBookNow(e);
+                          } else {
+                            setIsMenuOpen(false);
+                          }
+                        }}
                         className="nav-link"
                       >
                         {link.name}

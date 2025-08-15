@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Art1 from "../../Assets/art-1.jpg";
 import Art2 from "../../Assets/art-2.jpg";
 import Art3 from "../../Assets/art-3.jpg";
@@ -70,6 +70,23 @@ const CTA = () => {
   };
 
   const progressPercentage = (currentStep / 5) * 100;
+
+   useEffect(() => {
+    const openHandler = () => {
+      setIsOpen(true);
+      setCurrentStep(1);
+      setIsSubmitted(false);
+      setSelectedStyle(null);
+      setHasMotion(null);
+      setNeedsHelp(null);
+      setBudgetRange([200, 500]);
+      setFormData({ name: '', email: '' });
+      setError('');
+    };
+
+    window.addEventListener('open-cta', openHandler);
+    return () => window.removeEventListener('open-cta', openHandler);
+  }, []);
 
   return (
     <>

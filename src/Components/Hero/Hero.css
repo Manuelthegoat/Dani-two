@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Satoshi';
-  src: url('../../Assets/fonts/Satoshi-Bold.otf') format('opentype');
+  font-family: "Satoshi";
+  src: url("../../Assets/fonts/Satoshi-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
@@ -26,9 +26,59 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  inset: 0;
+  z-index: -1;
+}
+.bloom {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  width: 760px;
+  height: 760px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -2;
+
+  /* main soft orange bloom */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 102, 0, 0.12),
+    transparent 25%
+  );
+
+  filter: blur(48px) saturate(120%);
+  opacity: 0.9;
+}
+.bloom::after {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 140, 0, 0.06),
+    transparent 60%
+  );
+  filter: blur(60px);
 }
 
+@media (max-width: 768px) {
+  .bloom {
+    width: 520px;
+    height: 520px;
+    filter: blur(42px) saturate(115%);
+    opacity: 0.8;
+  }
+}
+@media (max-width: 480px) {
+  .bloom {
+    width: 380px;
+    height: 380px;
+    filter: blur(38px) saturate(110%);
+    opacity: 0.75;
+  }
+}
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -42,36 +92,35 @@
   font-size: 46px;
   font-weight: 900;
   margin: 0;
-font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.2;
   color: #ffffff;
   display: flex;
   align-items: center;
-          animation: floaty 6s ease-in-out infinite;
-
+  animation: floaty 6s ease-in-out infinite;
 }
 
 .fire {
   color: #fe852e;
   margin-left: 5px;
 }
- @keyframes floaty {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      }
+@keyframes floaty {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .hero-subtitle {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   margin: 0;
   color: #ddd;
-  letter-spacing: .28em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
 }
 
@@ -91,53 +140,106 @@ font-family: "Montserrat", sans-serif;
   color: #fe852e;
 }
 
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 46px;
   }
-  
+
   .hero-subtitle {
     font-size: 14px;
   }
-  
+
   .hero-socials {
     gap: 15px;
   }
-  
+
   .social-icon {
     font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
-
-  
   .hero-title {
     font-size: 46px;
   }
-  
 
   .hero-subtitle {
     font-size: 12px;
   }
-  
+
   .hero-socials {
     gap: 12px;
   }
-  
+
   .social-icon {
     font-size: 14px;
   }
 }
 /* Hero.css */
 .particles canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   will-change: transform;
 }
 
 .hero-subtitle {
   transition: opacity 0.5s ease;
 }
-.fade-in { opacity: 1; }
-.fade-out { opacity: 0; }
+.fade-in {
+  opacity: 1;
+}
+.fade-out {
+  opacity: 0;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000; /* Ensure solid black background */
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Particles container - middle layer */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Middle layer between bloom and content */
+}
+
+/* Particles canvas - needs explicit dimensions */
+.particles canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Bloom effect - bottom layer */
+.bloom {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 760px;
+  height: 760px;
+  z-index: 2; /* Behind particles */
+  /* Rest of your bloom styles */
+}
+
+/* Content - top layer */
+.hero-content {
+  position: relative;
+  z-index: 1; /* Above everything */
+  /* Rest of your content styles */
+}
