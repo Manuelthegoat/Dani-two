@@ -11,9 +11,9 @@ const Error = () => {
         <p className="error-message">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <Link to="/" className="error-button">
+        <a href="/" className="error-button">
           Return Home
-        </Link>
+        </a>
       </div>
     </div>
   );

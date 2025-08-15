@@ -14,8 +14,8 @@ const Works = () => {
       
       <div className="works-grid">
         {worksData.map((work) => (
-          <Link 
-            to={`/work/${work.id}`} 
+          <a 
+            href={`/work/${work.id}`} 
             key={work.id} 
             className="work-card-link" // Add this class
           >
@@ -35,7 +35,7 @@ const Works = () => {
                 <h3 className="card-title">{work.title}</h3>
               </div>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
 
