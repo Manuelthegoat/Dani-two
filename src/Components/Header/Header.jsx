@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import './Header.css';
-import Img from '../../Assets/logo2.png';
+import Img from '../../Assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

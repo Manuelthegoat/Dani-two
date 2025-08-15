@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
        <Hero />
-     <Video /> 
+     {/* <Video />  */}
      <About />
      <Works />
      <Embed />

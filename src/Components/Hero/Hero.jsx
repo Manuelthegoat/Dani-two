@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaInstagram, FaTwitter, FaYoutube, FaTiktok } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaYoutube, FaTiktok, FaPinterest } from "react-icons/fa";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import "./Hero.css";
@@ -18,15 +18,12 @@ const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Start fade out
       setFade(false);
-
-      // After fade out completes, change text and fade in
       setTimeout(() => {
         setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
         setFade(true);
-      }, 500); // This should match the CSS transition time
-    }, 2500); // Total time between changes (2000ms display + 500ms transition)
+      }, 500);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [texts.length]);
@@ -64,49 +61,54 @@ const Hero = () => {
         }}
         className="particles"
       />
-
       <div className="hero-content">
-        <h1 className="hero-title">Daniafterdark - Digital Artist</h1>
-        <div className="text-slider-container">
-          <h2 className={`hero-subtitle ${fade ? "fade-in" : "fade-out"}`}>
-            {texts[currentTextIndex]}
-          </h2>
+        <h1 className="hero-title">
+          DANI <span className="fire">火</span>
+        </h1>
+        <p className="hero-subtitle">visual storyteller</p>
+        
+        <div className="hero-socials">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FaInstagram className="social-icon" />
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+          >
+            <FaTwitter className="social-icon" />
+          </a>
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
+            <FaYoutube className="social-icon" />
+          </a>
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+          >
+            <FaTiktok className="social-icon" />
+          </a>
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+          >
+            <FaPinterest className="social-icon" />
+          </a>
         </div>
-      </div>
-
-      <div className="hero-socials">
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          <FaInstagram className="social-icon" />
-        </a>
-        <a
-          href="https://twitter.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter"
-        >
-          <FaTwitter className="social-icon" />
-        </a>
-        <a
-          href="https://youtube.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="YouTube"
-        >
-          <FaYoutube className="social-icon" />
-        </a>
-        <a
-          href="https://tiktok.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="TikTok"
-        >
-          <FaTiktok className="social-icon" />
-        </a>
       </div>
     </section>
   );
