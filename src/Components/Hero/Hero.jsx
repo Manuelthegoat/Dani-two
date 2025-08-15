@@ -44,7 +44,7 @@ const Hero = () => {
             color: { value: "#fff" },
             shape: { type: "circle" },
             opacity: { value: 0.5, random: true },
-            size: { value: 3, random: true },
+            size: { value: 2, random: true },
             move: {
               enable: true,
               speed: 1,
