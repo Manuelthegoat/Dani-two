@@ -44,7 +44,7 @@ const Hero = () => {
           fullScreen: { enable: true, zIndex: -1 },
           particles: {
             number: { value: 80, density: { enable: true, area: 800 } },
-            color: { value: "#FF6B00" },
+            color: { value: "#fe852e" },
             shape: { type: "circle" },
             opacity: { value: 0.5, random: true },
             size: { value: 3, random: true },

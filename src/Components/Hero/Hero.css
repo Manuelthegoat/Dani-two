@@ -54,7 +54,7 @@
   font-size: 80px;
   margin: 0;
   font-family: 'Satoshi', sans-serif;
-  color: #FF6B00;
+  color: #fe852e;
   line-height: 1.1;
   position: absolute;
   width: 100%;
@@ -97,7 +97,7 @@
 }
 
 .social-icon:hover {
-  color: #FF6B00;
+  color: #fe852e;
   transform: translateY(-3px);
 }
 

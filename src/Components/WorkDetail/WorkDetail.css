@@ -34,7 +34,7 @@
 }
 
 .category {
-  color: #FF6B00;
+  color: #fe852e;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -67,7 +67,7 @@
 .back-button {
   display: inline-block;
   padding: 12px 30px;
-  background-color: #FF6B00;
+  background-color: #fe852e;
   color: #000;
   text-decoration: none;
   border-radius: 30px;

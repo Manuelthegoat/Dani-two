@@ -12,7 +12,7 @@
 }
 
 .highlight {
-  color: #FF6B00;
+  color: #fe852e;
 }
 
 .contact-subtitle {
@@ -36,7 +36,7 @@
 }
 
 .social-icon:hover {
-  color: #FF6B00;
+  color: #fe852e;
 }
 
 .contact-form {
@@ -81,7 +81,7 @@
 .submit-btn {
   width: 100%;
   padding: 15px;
-  background-color: #FF6B00;
+  background-color: #fe852e;
   color: #000;
   border: none;
   border-radius: 8px;

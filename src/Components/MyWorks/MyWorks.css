@@ -96,9 +96,9 @@
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #FF6B00;
+  color: #fe852e;
   background: transparent;
-  border: 2px solid #FF6B00;
+  border: 2px solid #fe852e;
   border-radius: 30px;
   padding: 15px 40px;
   cursor: pointer;
@@ -106,7 +106,7 @@
 }
 
 .view-all-button:hover {
-  background: #FF6B00;
+  background: #fe852e;
   color: #000;
 }
 

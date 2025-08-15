@@ -20,7 +20,7 @@
 }
 
 .highlight {
-  color: #FF6B00;
+  color: #fe852e;
 }
 
 .cta-button {
@@ -30,7 +30,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #000;
-  background-color: #FF6B00;
+  background-color: #fe852e;
   border: none;
   border-radius: 30px;
   padding: 18px 50px;
@@ -126,7 +126,7 @@
 }
 
 .option-card.selected {
-  border-color: #FF6B00;
+  border-color: #fe852e;
   background-color: rgba(255, 107, 0, 0.1);
 }
 
@@ -161,7 +161,7 @@
 }
 
 .skip-text {
-  color: #FF6B00;
+  color: #fe852e;
   cursor: pointer;
   text-align: center;
   margin-top: 20px;
@@ -238,7 +238,7 @@
 .slider-range {
   position: absolute;
   height: 100%;
-  background-color: #FF6B00;
+  background-color: #fe852e;
   border-radius: 2px;
 }
 
@@ -259,7 +259,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #FF6B00;
+  background-color: #fe852e;
   -webkit-appearance: none;
   cursor: pointer;
 }
@@ -298,7 +298,7 @@ input[type="range"]::-webkit-slider-thumb {
 .submit-btn {
   width: 100%;
   padding: 15px;
-  background-color: #FF6B00;
+  background-color: #fe852e;
   color: #000;
   border: none;
   border-radius: 8px;
@@ -325,7 +325,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .success-message h3 {
-  color: #FF6B00;
+  color: #fe852e;
   margin-bottom: 15px;
   font-family: 'Satoshi', sans-serif;
 }
@@ -338,8 +338,8 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: 30px;
   padding: 12px 30px;
   background-color: transparent;
-  border: 2px solid #FF6B00;
-  color: #FF6B00;
+  border: 2px solid #fe852e;
+  color: #fe852e;
   border-radius: 30px;
   font-family: 'Satoshi', sans-serif;
   font-weight: bold;
@@ -348,7 +348,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .close-success-btn:hover {
-  background-color: #FF6B00;
+  background-color: #fe852e;
   color: #000;
 }
 
@@ -370,7 +370,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .progress-bar {
   height: 100%;
-  background-color: #FF6B00;
+  background-color: #fe852e;
   border-radius: 3px;
   transition: width 0.3s ease;
 }
@@ -393,7 +393,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .next-btn {
-  background-color: #FF6B00;
+  background-color: #fe852e;
   color: #000;
   font-weight: bold;
 }

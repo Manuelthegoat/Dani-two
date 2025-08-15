@@ -38,7 +38,7 @@
 }
 
 .menu-toggle:hover {
-  color: #FF6B00; /* Orange accent color */
+  color: #fe852e; /* Orange accent color */
   transform: scale(1.1);
 }
 
@@ -74,7 +74,7 @@
 }
 
 .nav-link:hover {
-  color: #FF6B00; /* Orange accent color */
+  color: #fe852e; /* Orange accent color */
 }
 
 /* Responsive adjustments */
