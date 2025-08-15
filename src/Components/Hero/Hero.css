@@ -95,7 +95,7 @@ font-family: "Montserrat", sans-serif;
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 36px;
+    font-size: 46px;
   }
   
   .hero-subtitle {
@@ -115,7 +115,7 @@ font-family: "Montserrat", sans-serif;
 
   
   .hero-title {
-    font-size: 28px;
+    font-size: 46px;
   }
   
   .hero-subtitle {
