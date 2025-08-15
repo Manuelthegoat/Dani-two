@@ -1,0 +1,81 @@
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.error-content {
+  max-width: 600px;
+}
+
+.error-code {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 120px;
+  font-weight: bold;
+  color: #FF6B00;
+  margin: 0;
+  line-height: 1;
+}
+
+.error-title {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 36px;
+  margin: 20px 0 10px;
+}
+
+.error-message {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 18px;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+.error-button {
+  display: inline-block;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000;
+  background-color: #FF6B00;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.error-button:hover {
+  background-color: #e05e00;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 80px;
+  }
+  
+  .error-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-code {
+    font-size: 60px;
+  }
+  
+  .error-title {
+    font-size: 24px;
+  }
+  
+  .error-button {
+    padding: 12px 30px;
+  }
+}

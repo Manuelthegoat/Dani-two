@@ -1,0 +1,161 @@
+.work-page {
+  padding: 100px 5%;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+.work-page-header {
+  margin-bottom: 50px;
+}
+
+.work-page-title {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 72px;
+  font-weight: bold;
+  margin-bottom: 30px;
+ 
+}
+
+.work-tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+.tab {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  opacity: 1;
+}
+
+.tab.active {
+  opacity: 1;
+  color: #FF6B00;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FF6B00;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.work-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+
+.work-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.work-item:hover .work-image {
+  transform: scale(1.05);
+}
+
+.work-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-item:hover .work-overlay {
+  opacity: 1;
+}
+
+.work-item-title {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+  color: #FF6B00;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .work-page-title {
+    font-size: 60px;
+  }
+  
+  .work-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .work-page {
+    padding: 100px 5%;
+  }
+  
+  .work-page-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .work-tabs {
+    gap: 20px;
+  }
+  
+  .tab {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-page-title {
+    font-size: 36px;
+  }
+  
+  .work-tabs {
+    gap: 15px;
+  }
+  
+  .tab {
+    font-size: 14px;
+  }
+  
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .work-item-title {
+    font-size: 20px;
+  }
+}
